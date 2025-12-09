@@ -1,0 +1,207 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Free Page – Ecosia Style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ecosia: {
+              black: "#101010",
+              dark: "#121212",
+              card: "#181818",
+              lime: "#D5FF63",
+              limeDark: "#C3F156",
+              grey: "#B3B3B3"
+            }
+          },
+          fontFamily: {
+            ecosia: ["system-ui", "Segoe UI", "Roboto", "sans-serif"]
+          },
+          boxShadow: {
+            ecosia: "0 18px 40px rgba(0,0,0,0.65)"
+          },
+          borderRadius: {
+            hero: "32px"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-ecosia-black text-white font-ecosia antialiased">
+  <div class="min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="w-full bg-black h-16 flex items-center justify-between px-4 md:px-10 sticky top-0 z-40">
+      <div class="flex items-center gap-10">
+        <span class="font-black tracking-[0.25em] text-white text-sm">ECOSIA</span>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-white/70">
+          <a href="index.html" class="hover:text-white transition">Beranda</a>
+          <a href="biodata.html" class="hover:text-white transition">Biodata</a>
+          <a href="contact_us.html" class="hover:text-white transition">Hubungi Kami</a>
+          <a href="posts.html" class="hover:text-white transition">Posts</a>
+          <a href="freepage.html" class="text-white font-semibold">Free Page</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="hidden sm:inline-flex items-center px-6 py-2 rounded-full bg-ecosia-lime text-black text-sm font-semibold hover:bg-ecosia-limeDark transition shadow-md">
+          <span class="mr-2 text-base">▦</span>
+          Download Ecosia Browser
+        </button>
+        <button class="hidden sm:inline-flex text-sm text-white/80 hover:text-white">Sign up</button>
+        <button class="hidden sm:inline-flex w-8 h-8 rounded-full bg-ecosia-lime text-black text-xs font-bold">🍋</button>
+        <button class="hidden sm:inline-flex w-8 h-8 rounded-full bg-white/10 text-sm border border-white/20">👤</button>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-1 bg-ecosia-dark px-4 md:px-10 py-12">
+      <div class="max-w-6xl mx-auto space-y-12">
+
+        <!-- SECTION 1: TENTANG SAYA & HOBI -->
+        <section class="grid gap-8 md:grid-cols-[1.1fr,1.1fr] items-center">
+          <div>
+            <p class="text-xs tracking-[0.25em] text-ecosia-grey uppercase mb-3">
+              FREE PAGE – MINI PORTFOLIO
+            </p>
+            <h1 class="text-2xl md:text-3xl font-extrabold mb-4">
+              Halaman Kreatif: Hobi & Minat Saya
+            </h1>
+            <p class="text-sm md:text-base text-ecosia-grey leading-relaxed mb-3">
+              Di luar tugas kuliah, saya suka mengerjakan hal-hal yang berhubungan
+              dengan teknologi, desain, dan kreativitas. Halaman ini berisi beberapa
+              hal yang saya nikmati dan proyek kecil yang pernah saya kerjakan.
+            </p>
+            <p class="text-sm md:text-base text-ecosia-grey leading-relaxed">
+              (Silakan ubah teks ini sesuai hobi kamu: misalnya fotografi, musik,
+              desain grafis, gaming, konten kreator, dll.)
+            </p>
+          </div>
+
+          <div class="bg-ecosia-card rounded-[32px] p-6 md:p-8 shadow-ecosia border border-white/10">
+            <h2 class="text-lg font-semibold mb-4">Hobi Favorit</h2>
+            <ul class="space-y-3 text-sm text-ecosia-grey">
+              <li class="flex items-start gap-3">
+                <span class="mt-1">🎧</span>
+                <div>
+                  <p class="font-semibold text-white text-sm">Mendengarkan musik sambil ngoding</p>
+                  <p>Saya suka memadukan fokus ngoding dengan playlist lo-fi atau instrumental.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1">🖌️</span>
+                <div>
+                  <p class="font-semibold text-white text-sm">Eksperimen desain UI</p>
+                  <p>Mencoba ulang tampilan website populer menggunakan Tailwind CSS.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1">🎮</span>
+                <div>
+                  <p class="font-semibold text-white text-sm">Gaming santai</p>
+                  <p>Game jadi cara saya recharge setelah seharian belajar & ngoding.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECTION 2: MINI PROJECT GALLERY -->
+        <section class="space-y-4">
+          <div class="flex items-center justify-between gap-4">
+            <h2 class="text-xl md:text-2xl font-extrabold">Mini Project Gallery</h2>
+            <span class="text-xs text-ecosia-grey">
+              (Contoh proyek kecil yang bisa saya tunjukkan)
+            </span>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- CARD 1 -->
+            <article class="bg-ecosia-card rounded-3xl p-5 border border-white/10 shadow-md hover:shadow-ecosia hover:-translate-y-1 transition">
+              <div class="mb-3 text-3xl">🌿</div>
+              <h3 class="font-semibold mb-2">Clone Landing Page</h3>
+              <p class="text-xs text-ecosia-grey mb-3">
+                Menduplikasi tampilan halaman depan Ecosia menggunakan Tailwind CSS.
+              </p>
+              <span class="inline-flex text-[11px] px-3 py-1 rounded-full bg-white/10 text-ecosia-grey">
+                HTML • Tailwind CSS
+              </span>
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="bg-ecosia-card rounded-3xl p-5 border border-white/10 shadow-md hover:shadow-ecosia hover:-translate-y-1 transition">
+              <div class="mb-3 text-3xl">📋</div>
+              <h3 class="font-semibold mb-2">Form Pendaftaran Interaktif</h3>
+              <p class="text-xs text-ecosia-grey mb-3">
+                Formulir dengan validasi JavaScript untuk memastikan data pengguna lengkap dan valid.
+              </p>
+              <span class="inline-flex text-[11px] px-3 py-1 rounded-full bg-white/10 text-ecosia-grey">
+                JavaScript • UX
+              </span>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="bg-ecosia-card rounded-3xl p-5 border border-white/10 shadow-md hover:shadow-ecosia hover:-translate-y-1 transition">
+              <div class="mb-3 text-3xl">📡</div>
+              <h3 class="font-semibold mb-2">Fetch API Post Viewer</h3>
+              <p class="text-xs text-ecosia-grey mb-3">
+                Menampilkan data dari JSONPlaceholder dan menyajikannya dalam tampilan kartu yang rapi.
+              </p>
+              <span class="inline-flex text-[11px] px-3 py-1 rounded-full bg-white/10 text-ecosia-grey">
+                Fetch API • JSON
+              </span>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECTION 3: VIDEO / EMBED -->
+        <section class="grid gap-6 md:grid-cols-[1.1fr,1fr] items-center">
+          <div>
+            <h2 class="text-xl md:text-2xl font-extrabold mb-3">
+              Video yang Menginspirasi Saya
+            </h2>
+            <p class="text-sm md:text-base text-ecosia-grey leading-relaxed mb-3">
+              Terkadang, menonton video tutorial atau sharing dari developer lain
+              membantu saya memahami konsep baru dan tetap termotivasi untuk belajar.
+            </p>
+          </div>
+
+          <!-- EMBED YOUTUBE (ganti src dengan video yang kamu mau) -->
+          <div class="bg-ecosia-card rounded-3xl overflow-hidden border border-white/10 shadow-ecosia">
+            <div class="aspect-video">
+        <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/LOHYl1egXKU"
+            title="YouTube video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+        ></iframe>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-ecosia-dark pt-8 pb-10 px-4 md:px-10 border-t border-white/10">
+      <div class="max-w-6xl mx-auto text-xs text-ecosia-grey space-y-2">
+        <p>&copy; 2025 Richardo Halden Situmorang. Halaman kreatif – dibuat untuk proyek akhir.</p>
+        <div class="space-x-3 text-sm">
+          <a href="https://fti.unai.edu" target="_blank" class="hover:text-white">FTI UNAI</a>
+          <a href="https://unai.edu" target="_blank" class="hover:text-white">Situs Web UNAI</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

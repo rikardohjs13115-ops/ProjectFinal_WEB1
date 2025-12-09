@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hubungi Kami – Ecosia Style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CDN + config sama -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ecosia: {
+              black: "#101010",
+              dark: "#121212",
+              card: "#181818",
+              lime: "#D5FF63",
+              limeDark: "#C3F156",
+              grey: "#B3B3B3"
+            }
+          },
+          fontFamily: {
+            ecosia: ["system-ui", "Segoe UI", "Roboto", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-emerald-900 text-white font-ecosia antialiased">
+  <div class="min-h-screen flex flex-col">
+
+    <!-- HEADER (SAMA) -->
+    <header class="w-full bg-black h-16 flex items-center justify-between px-4 md:px-10 sticky top-0 z-40">
+      <div class="flex items-center gap-10">
+        <span class="font-black tracking-[0.25em] text-white text-sm">ECOSIA</span>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-white/70">
+          <a href="index.html" class="hover:text-white transition">Beranda</a>
+          <a href="biodata.html" class="hover:text-white transition">Biodata</a>
+          <a href="contact_us.html" class="text-white font-semibold">Hubungi Kami</a>
+          <a href="posts.html" class="hover:text-white transition">Posts</a>
+          <a href="freepage.html" class="hover:text-white transition">Free Page</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-4">
+        <!-- tombol-tombol seperti di index -->
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-1 bg-emerald-950 px-4 md:px-10 py-12">
+      <div class="max-w-4xl mx-auto bg-ecosia-card rounded-[32px] p-8 md:p-10 shadow-ecosia border border-white/10">
+
+        <h1 class="text-2xl md:text-3xl font-extrabold mb-2">Formulir Pendaftaran Siswa</h1>
+        <p class="text-sm text-ecosia-grey mb-6">
+          Silakan isi data berikut dengan lengkap dan benar.
+        </p>
+
+        <!-- PESAN ERROR / SUKSES -->
+        <div id="formMessage" class="hidden mb-6 text-sm rounded-xl px-4 py-3"></div>
+
+        <form id="studentForm" class="space-y-5">
+
+          <!-- Nama Lengkap -->
+          <div>
+            <label for="nama" class="block text-sm font-semibold mb-1">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama"
+                   class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2 text-sm
+                          focus:outline-none focus:ring-2 focus:ring-ecosia-lime focus:border-ecosia-lime
+                          placeholder:text-ecosia-grey"
+                   placeholder="Masukkan nama lengkap">
+          </div>
+
+          <!-- NIM -->
+          <div>
+            <label for="nim" class="block text-sm font-semibold mb-1">ID Mahasiswa (NIM)</label>
+            <input type="text" id="nim" name="nim"
+                   class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2 text-sm
+                          focus:outline-none focus:ring-2 focus:ring-ecosia-lime focus:border-ecosia-lime"
+                   placeholder="Masukkan NIM">
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-1">Alamat Email</label>
+            <input type="email" id="email" name="email"
+                   class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2 text-sm
+                          focus:outline-none focus:ring-2 focus:ring-ecosia-lime focus:border-ecosia-lime"
+                   placeholder="nama@contoh.com">
+          </div>
+
+          <!-- Fakultas / Jurusan -->
+          <div>
+            <label for="fakultas" class="block text-sm font-semibold mb-1">Fakultas / Jurusan</label>
+            <select id="fakultas" name="fakultas"
+                    class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2 text-sm
+                           focus:outline-none focus:ring-2 focus:ring-ecosia-lime focus:border-ecosia-lime">
+              <option value="">-- Pilih Fakultas / Jurusan --</option>
+              <option value="FTI - Informatika">FTI - Informatika</option>
+              <option value="FTI - SI">FTI - Sistem Informasi</option>
+              <option value="FE">Fakultas Ekonomi</option>
+              <option value="FKIP">FKIP</option>
+              <!-- tambah sesuai kebutuhan -->
+            </select>
+          </div>
+
+          <!-- Tanggal Lahir -->
+          <div>
+            <label for="tanggalLahir" class="block text-sm font-semibold mb-1">Tanggal Lahir</label>
+            <input type="date" id="tanggalLahir" name="tanggalLahir"
+                   class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2 text-sm
+                          focus:outline-none focus:ring-2 focus:ring-ecosia-lime focus:border-ecosia-lime">
+          </div>
+
+          <!-- Jenis Kelamin -->
+          <div>
+            <span class="block text-sm font-semibold mb-1">Jenis Kelamin</span>
+            <div class="flex items-center gap-4 text-sm">
+              <label class="inline-flex items-center gap-2">
+                <input type="radio" name="gender" value="Pria"
+                       class="accent-ecosia-lime">
+                <span>Pria</span>
+              </label>
+              <label class="inline-flex items-center gap-2">
+                <input type="radio" name="gender" value="Wanita"
+                       class="accent-ecosia-lime">
+                <span>Wanita</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Alamat -->
+          <div>
+            <label for="alamat" class="block text-sm font-semibold mb-1">Alamat</label>
+            <textarea id="alamat" name="alamat" rows="3"
+                      class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2 text-sm
+                             focus:outline-none focus:ring-2 focus:ring-ecosia-lime focus:border-ecosia-lime"
+                      placeholder="Tulis alamat lengkap"></textarea>
+          </div>
+
+          <!-- Nomor Telepon -->
+          <div>
+            <label for="telepon" class="block text-sm font-semibold mb-1">Nomor Telepon</label>
+            <input type="text" id="telepon" name="telepon"
+                   class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2 text-sm
+                          focus:outline-none focus:ring-2 focus:ring-ecosia-lime focus:border-ecosia-lime"
+                   placeholder="Hanya angka, minimal 10 digit">
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="pt-2">
+            <button type="submit"
+                    class="inline-flex items-center px-6 py-2.5 rounded-full bg-ecosia-lime text-black text-sm font-semibold
+                           hover:bg-ecosia-limeDark transition shadow-md">
+              Kirim Pendaftaran
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-emerald-950 pt-8 pb-10 px-4 md:px-10 border-t border-white/10">
+      <div class="max-w-6xl mx-auto text-xs text-ecosia-grey">
+        &copy; 2025 Richardo Halden Situmorang.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- VALIDASI FORM -->
+  <script>
+    const form = document.getElementById('studentForm');
+    const msgBox = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nama = document.getElementById('nama').value.trim();
+      const nim = document.getElementById('nim').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const fakultas = document.getElementById('fakultas').value;
+      const tanggalLahir = document.getElementById('tanggalLahir').value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const alamat = document.getElementById('alamat').value.trim();
+      const telepon = document.getElementById('telepon').value.trim();
+
+      let errors = [];
+
+      if (!nama) errors.push("Nama lengkap wajib diisi.");
+      if (!nim) errors.push("NIM wajib diisi.");
+      if (!email) {
+        errors.push("Email wajib diisi.");
+      } else {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          errors.push("Format email tidak valid.");
+        }
+      }
+
+      if (!fakultas) errors.push("Fakultas/Jurusan wajib dipilih.");
+      if (!tanggalLahir) errors.push("Tanggal lahir wajib diisi.");
+      if (!gender) errors.push("Jenis kelamin wajib dipilih.");
+      if (!alamat) errors.push("Alamat wajib diisi.");
+
+      if (!telepon) {
+        errors.push("Nomor telepon wajib diisi.");
+      } else {
+        const hanyaAngka = /^\d+$/;
+        if (!hanyaAngka.test(telepon)) {
+          errors.push("Nomor telepon hanya boleh berisi angka.");
+        }
+        if (telepon.length < 10) {
+          errors.push("Nomor telepon minimal 10 digit.");
+        }
+      }
+
+      if (errors.length > 0) {
+        msgBox.className = "mb-6 text-sm rounded-xl px-4 py-3 bg-red-600/30 border border-red-500 text-red-100";
+        msgBox.innerHTML = "<ul class='list-disc list-inside space-y-1'>" +
+          errors.map(err => `<li>${err}</li>`).join("") +
+          "</ul>";
+        msgBox.classList.remove('hidden');
+      } else {
+        msgBox.className = "mb-6 text-sm rounded-xl px-4 py-3 bg-emerald-600/30 border border-emerald-500 text-emerald-100";
+        msgBox.textContent = "Formulir berhasil dikirim. Terima kasih!";
+        msgBox.classList.remove('hidden');
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
