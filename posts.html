@@ -26,9 +26,6 @@
           },
           boxShadow: {
             ecosia: "0 18px 40px rgba(0,0,0,0.65)"
-          },
-          borderRadius: {
-            hero: "32px"
           }
         }
       }
@@ -36,14 +33,16 @@
   </script>
 </head>
 
-<!-- UBAH: sekarang hijau -->
 <body class="bg-emerald-900 text-white font-ecosia antialiased">
   <div class="min-h-screen flex flex-col">
 
-    <!-- HEADER -->
+    <!-- ===== HEADER RESPONSIVE ===== -->
     <header class="w-full bg-black h-16 flex items-center justify-between px-4 md:px-10 sticky top-0 z-40">
-      <div class="flex items-center gap-10">
+
+      <!-- Left: Logo + Desktop Menu -->
+      <div class="flex items-center gap-6">
         <span class="font-black tracking-[0.25em] text-white text-sm">ECOSIA</span>
+
         <nav class="hidden md:flex items-center gap-6 text-sm text-white/70">
           <a href="index.html" class="hover:text-white transition">Beranda</a>
           <a href="biodata.html" class="hover:text-white transition">Biodata</a>
@@ -52,22 +51,49 @@
           <a href="freepage.html" class="hover:text-white transition">Free Page</a>
         </nav>
       </div>
-      <div class="flex items-center gap-4"></div>
+
+      <!-- Desktop Buttons (kosong sesuai file asli) -->
+      <div class="hidden md:flex items-center gap-4"></div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuToggle" class="md:hidden text-white text-2xl">
+        ☰
+      </button>
     </header>
 
-    <!-- MAIN -->
-    <!-- UBAH: background jadi emerald -->
+    <!-- ===== MOBILE MENU ===== -->
+    <nav id="mobileMenu"
+      class="hidden bg-black border-t border-white/10 md:hidden flex-col p-4 space-y-3 text-white/80">
+      <a href="index.html" class="block hover:text-white">Beranda</a>
+      <a href="biodata.html" class="block hover:text-white">Biodata</a>
+      <a href="contact_us.html" class="block hover:text-white">Hubungi Kami</a>
+      <a href="posts.html" class="block text-white font-semibold">Posts</a>
+      <a href="freepage.html" class="block hover:text-white">Free Page</a>
+    </nav>
+
+    <script>
+      const toggleBtn = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      toggleBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- ===== MAIN CONTENT ===== -->
     <main class="flex-1 bg-emerald-950 px-4 md:px-10 py-12">
       <div class="max-w-4xl mx-auto space-y-8">
 
-        <!-- JUDUL & INFO -->
+        <!-- Header Section -->
         <section class="space-y-3">
           <p class="text-xs tracking-[0.25em] text-ecosia-grey uppercase">
             POST DARI API
           </p>
+
           <h1 class="text-2xl md:text-3xl font-extrabold">
             Data Postingan (JSONPlaceholder)
           </h1>
+
           <p class="text-sm text-ecosia-grey">
             Data ini diambil menggunakan <span class="font-semibold">Fetch API</span> dari:
             <span class="block text-xs md:text-sm mt-1 break-all text-ecosia-lime">
@@ -76,15 +102,16 @@
           </p>
         </section>
 
-        <!-- CARD -->
+        <!-- POST CARD -->
         <section>
           <div id="postCard"
-               class="bg-ecosia-card rounded-[24px] p-6 md:p-8 shadow-ecosia border border-white/10">
+            class="bg-ecosia-card rounded-[24px] p-6 md:p-8 shadow-ecosia border border-white/10">
 
-            <!-- LOADING -->
+            <!-- Loading Skeleton -->
             <div id="loadingState" class="space-y-3">
-              <div class="h-4 w-20 bg-white/10 rounded-full animate-pulse"></div>
+              <div class="h-4 w-24 bg-white/10 rounded-full animate-pulse"></div>
               <div class="h-6 w-1/2 bg-white/10 rounded-full animate-pulse"></div>
+
               <div class="mt-4 space-y-2">
                 <div class="h-3 w-full bg-white/10 rounded-full animate-pulse"></div>
                 <div class="h-3 w-5/6 bg-white/10 rounded-full animate-pulse"></div>
@@ -98,11 +125,11 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
-    <!-- UBAH: jadi emerald juga -->
+    <!-- ===== FOOTER ===== -->
     <footer class="bg-emerald-950 pt-8 pb-10 px-4 md:px-10 border-t border-white/10">
       <div class="max-w-6xl mx-auto text-xs text-ecosia-grey space-y-2">
         <p>&copy; 2025 Richardo Halden Situmorang. All rights reserved.</p>
+
         <div class="space-x-3 text-sm">
           <a href="https://fti.unai.edu" target="_blank" class="hover:text-white">FTI UNAI</a>
           <a href="https://unai.edu" target="_blank" class="hover:text-white">Situs Web UNAI</a>
@@ -112,11 +139,11 @@
 
   </div>
 
-  <!-- FETCH API -->
+  <!-- ===== FETCH API SCRIPT ===== -->
   <script>
     const url = "https://jsonplaceholder.typicode.com/posts/15";
     const postCard = document.getElementById("postCard");
-    const loadingState = document.getElementById("loadingState");
+    const loading = document.getElementById("loadingState");
 
     fetch(url)
       .then(response => {
@@ -124,19 +151,24 @@
         return response.json();
       })
       .then(data => {
-        loadingState.remove();
+        loading.remove();
+
         postCard.innerHTML = `
           <div class="text-xs uppercase tracking-[0.25em] text-ecosia-grey mb-2">
             POST ID: ${data.id}
           </div>
-          <h2 class="text-xl md:text-2xl font-bold mb-4">${data.title}</h2>
+
+          <h2 class="text-xl md:text-2xl font-bold mb-4">
+            ${data.title}
+          </h2>
+
           <p class="text-sm md:text-base text-ecosia-grey leading-relaxed whitespace-pre-line">
             ${data.body}
           </p>
         `;
       })
-      .catch(err => {
-        loadingState.remove();
+      .catch(() => {
+        loading.remove();
         postCard.innerHTML = `
           <div class="bg-red-600/20 border border-red-500 text-red-100 text-sm rounded-xl px-4 py-3">
             Gagal memuat data dari API.

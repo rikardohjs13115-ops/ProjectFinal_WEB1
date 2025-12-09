@@ -27,23 +27,23 @@
           boxShadow: {
             ecosia: "0 18px 40px rgba(0,0,0,0.65)"
           },
-          borderRadius: {
-            hero: "32px"
-          }
         }
       }
     };
   </script>
 </head>
 
-<!-- DI SINI DIGANTI: bg-emerald-900 (hijau tua) -->
 <body class="bg-emerald-900 text-white font-ecosia antialiased">
   <div class="min-h-screen flex flex-col">
 
-    <!-- HEADER (SAMA DENGAN INDEX) -->
+    <!-- ===== HEADER RESPONSIVE ===== -->
     <header class="w-full bg-black h-16 flex items-center justify-between px-4 md:px-10 sticky top-0 z-40">
-      <div class="flex items-center gap-10">
+
+      <!-- Logo + Navigation -->
+      <div class="flex items-center gap-6">
         <span class="font-black tracking-[0.25em] text-white text-sm">ECOSIA</span>
+
+        <!-- Desktop Menu -->
         <nav class="hidden md:flex items-center gap-6 text-sm text-white/70">
           <a href="index.html" class="hover:text-white transition">Beranda</a>
           <a href="biodata.html" class="text-white font-semibold">Biodata</a>
@@ -52,29 +52,56 @@
           <a href="freepage.html" class="hover:text-white transition">Free Page</a>
         </nav>
       </div>
-      <div class="flex items-center gap-4">
-        <button class="hidden sm:inline-flex items-center px-6 py-2 rounded-full bg-ecosia-lime text-black text-sm font-semibold hover:bg-ecosia-limeDark transition shadow-md">
+
+      <!-- Desktop Buttons -->
+      <div class="hidden md:flex items-center gap-4">
+        <button class="items-center px-6 py-2 rounded-full bg-ecosia-lime text-black text-sm font-semibold hover:bg-ecosia-limeDark transition shadow-md">
           <span class="mr-2 text-base">▦</span>
           Download Ecosia Browser
         </button>
-        <button class="hidden sm:inline-flex text-sm text-white/80 hover:text-white">Sign up</button>
-        <button class="hidden sm:inline-flex w-8 h-8 rounded-full bg-ecosia-lime text-black text-xs font-bold">🍋</button>
-        <button class="hidden sm:inline-flex w-8 h-8 rounded-full bg-white/10 text-sm border border-white/20">👤</button>
+        <button class="text-sm text-white/80 hover:text-white">Sign up</button>
+        <button class="w-8 h-8 rounded-full bg-ecosia-lime text-black text-xs font-bold">🍋</button>
+        <button class="w-8 h-8 rounded-full bg-white/10 text-sm border border-white/20">👤</button>
       </div>
+
+      <!-- MOBILE BUTTON -->
+      <button id="menuToggle" class="md:hidden text-white text-2xl">
+        ☰
+      </button>
     </header>
 
-    <!-- MAIN -->
-    <!-- DI SINI JUGA DIGANTI: bg-emerald-950 supaya tetap hijau tapi sedikit lebih gelap -->
+    <!-- ===== MOBILE MENU ===== -->
+    <nav id="mobileMenu" class="hidden bg-black border-t border-white/10 md:hidden flex-col p-4 space-y-3 text-white/80">
+      <a href="index.html" class="block hover:text-white">Beranda</a>
+      <a href="biodata.html" class="block text-white font-semibold">Biodata</a>
+      <a href="contact_us.html" class="block hover:text-white">Hubungi Kami</a>
+      <a href="posts.html" class="block hover:text-white">Posts</a>
+      <a href="freepage.html" class="block hover:text-white">Free Page</a>
+      <button class="w-full mt-2 px-4 py-2 bg-ecosia-lime text-black rounded-lg font-bold">
+        Download Browser
+      </button>
+    </nav>
+
+    <!-- SCRIPT MENU -->
+    <script>
+      const toggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("mobileMenu");
+
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- ===== MAIN ===== -->
     <main class="flex-1 bg-emerald-950 px-4 md:px-10 py-12">
       <div class="max-w-5xl mx-auto grid gap-10 md:grid-cols-[1.1fr,1.2fr] items-start">
 
         <!-- KARTU BIODATA -->
-        <section class="bg-ecosia-card rounded-[32px] p-8 shadow-ecosia border border-white/10">
+        <section class="bg-ecosia-card rounded-3xl p-8 shadow-ecosia border border-white/10">
           <h1 class="text-2xl md:text-3xl font-extrabold mb-6">Biodata Mahasiswa</h1>
 
           <div class="flex flex-col items-center text-center mb-6">
-            <!-- GANTI src DENGAN FOTO KAMU -->
-            <img src="images/Richardo.jpeg" alt="Foto Mahasiswa"
+            <img src="images/Richardo.jpeg"
                  class="w-32 h-32 rounded-full object-cover border-4 border-ecosia-lime mb-4">
             <h2 class="text-xl font-bold">Nama Lengkap Kamu</h2>
             <p class="text-ecosia-grey text-sm">Fakultas Teknologi Informasi</p>
@@ -93,10 +120,12 @@
               <span class="font-semibold text-white">Fakultas</span>
               <span>Fakultas Teknologi Informasi</span>
             </div>
+
             <div>
               <span class="font-semibold text-white block mb-1">Hobi</span>
               <p>- Ngoding<br>- Desain UI<br>- Main game</p>
             </div>
+
             <div>
               <span class="font-semibold text-white block mb-1">Keterampilan</span>
               <p>- HTML, CSS, JavaScript<br>- Tailwind CSS<br>- Git & GitHub</p>
@@ -104,22 +133,26 @@
           </div>
         </section>
 
-        <!-- TESTIMONIAL / REFLEKSI -->
-        <section class="bg-ecosia-card rounded-[32px] p-8 shadow-ecosia border border-white/10">
+        <!-- TESTIMONIAL -->
+        <section class="bg-ecosia-card rounded-3xl p-8 shadow-ecosia border border-white/10">
           <p class="text-xs tracking-[0.25em] text-ecosia-grey uppercase mb-3">
             Testimonial Kelas Pengembangan Web
           </p>
           <h2 class="text-2xl font-extrabold mb-4">Refleksi Pengalaman Belajar</h2>
 
           <p class="text-sm md:text-base text-ecosia-grey leading-relaxed mb-4">
-            Selama mengikuti kelas Web 1, saya belajar dasar-dasar HTML dan CSS yang awalnya terlihat sederhana, tetapi ternyata membutuhkan ketelitian. Bagian yang paling menantang adalah membuat layout responsif, namun itu juga yang paling memuaskan ketika berhasil tampil rapi di berbagai perangkat. Kelas ini membuat saya lebih memahami cara kerja website dan meningkatkan kepercayaan diri saya dalam membangun halaman web.
+            Selama mengikuti kelas Web 1, saya belajar dasar-dasar HTML dan CSS yang
+            awalnya terlihat sederhana, tetapi ternyata membutuhkan ketelitian.
+            Tantangan utamanya adalah membuat layout responsif, namun merasa sangat
+            puas ketika tampilan berhasil menyesuaikan di berbagai perangkat.
+            Kelas ini membuat saya lebih percaya diri dalam membangun website.
           </p>
         </section>
 
       </div>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ===== FOOTER ===== -->
     <footer class="bg-emerald-950 pt-12 pb-10 px-4 md:px-10 border-t border-white/10">
       <div class="max-w-6xl mx-auto space-y-6 text-ecosia-grey text-xs">
         <p>&copy; 2025 Richardo Halden Situmorang. All rights reserved.</p>

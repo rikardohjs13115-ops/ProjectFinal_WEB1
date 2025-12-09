@@ -311,18 +311,34 @@
   </div>
 </section>
 
-<footer class="bg-ecosia-dark pt-12_pb-10 px-4 md:px-10 border-t border-white/10">
+<footer class="bg-ecosia-dark pt-12 pb-10 px-4 md:px-10 border-t border-white/10">
   <div class="max-w-6xl mx-auto space-y-10">
 
-    <div class="grid gap-8 md:grid-cols-5 text-sm text-ecosia-grey">
+    <!-- GRID FOOTER -->
+    <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 text-sm text-ecosia-grey">
+
+      <!-- QUICK LINKS -->
       <div>
-        <p class="uppercase text-xs tracking-[0.25em] mb-3">Certified</p>
+        <p class="uppercase text-xs tracking-[0.25em] text-white mb-3">QUICK LINKS</p>
+        <ul class="space-y-1.5">
+          <li><a href="index.html" class="hover:underline">Beranda</a></li>
+          <li><a href="biodata.html" class="hover:underline">Biodata</a></li>
+          <li><a href="contact_us.html" class="hover:underline">Hubungi Kami</a></li>
+          <li><a href="posts.html" class="hover:underline">Posts</a></li>
+          <li><a href="freepage.html" class="hover:underline">Free Page</a></li>
+        </ul>
+      </div>
+
+      <!-- Certified -->
+      <div>
+        <p class="uppercase text-xs tracking-[0.25em] text-white mb-3">CERTIFIED</p>
         <div class="w-20 h-20 rounded-full border border-white/40 flex items-center justify-center text-xs font-bold mb-2">B</div>
         <a href="#" class="text-xs hover:underline">Certification Notice</a>
       </div>
 
+      <!-- What We Do -->
       <div>
-        <p class="uppercase text-xs tracking-[0.25em] mb-3">WHAT WE DO</p>
+        <p class="uppercase text-xs tracking-[0.25em] text-white mb-3">WHAT WE DO</p>
         <ul class="space-y-1.5">
           <li><a href="#" class="hover:underline">Ecosia Browser</a></li>
           <li><a href="#" class="hover:underline">Ecosia Search</a></li>
@@ -330,8 +346,9 @@
         </ul>
       </div>
 
+      <!-- About -->
       <div>
-        <p class="uppercase text-xs tracking-[0.25em] mb-3">ABOUT</p>
+        <p class="uppercase text-xs tracking-[0.25em] text-white mb-3">ABOUT</p>
         <ul class="space-y-1.5">
           <li><a href="#" class="hover:underline">Careers</a></li>
           <li><a href="#" class="hover:underline">Press</a></li>
@@ -340,8 +357,9 @@
         </ul>
       </div>
 
+      <!-- Legal -->
       <div>
-        <p class="uppercase text-xs tracking-[0.25em] mb-3">LEGAL</p>
+        <p class="uppercase text-xs tracking-[0.25em] text-white mb-3">LEGAL</p>
         <ul class="space-y-1.5">
           <li><a href="#" class="hover:underline">Privacy policy</a></li>
           <li><a href="#" class="hover:underline">Terms of service</a></li>
@@ -351,8 +369,9 @@
         </ul>
       </div>
 
+      <!-- Apps -->
       <div>
-        <p class="uppercase text-xs tracking-[0.25em] mb-3">APPS</p>
+        <p class="uppercase text-xs tracking-[0.25em] text-white mb-3">APPS</p>
         <div class="space-y-2">
           <div class="inline-flex items-center border border-white/40 rounded-md px-3 py-2 text-xs">
             <span class="mr-2 text-base">▶</span> Get it on Google Play
@@ -365,6 +384,7 @@
 
     </div>
 
+    <!-- Bottom Section -->
     <div class="border-t border-white/10 pt-6 text-[11px] text-ecosia-grey">
       <p class="mb-4">
         Ecosia GmbH does not assume responsibility for the content of sites to which it links and the way in which search results are displayed.
@@ -390,8 +410,6 @@
 
   </div>
 </footer>
-
-</div>
 
 <script>
   const menuButton = document.getElementById("menuButton");
